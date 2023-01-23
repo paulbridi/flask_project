@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 import openai
-openai.api_key = "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"
+openai.api_key = ""
 
 
 views = Blueprint('views', __name__)

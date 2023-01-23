@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 import openai
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 views = Blueprint('views', __name__)
@@ -18,9 +18,6 @@ def home():
             input=i_string,
             instruction=local_instruction
             )
-
-        # print(oai_object.instruction)
-        # instruction_gvent = oai_object.instruction
 
         o_string = oai_object["choices"][0]["text"]
 

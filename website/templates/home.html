@@ -5,20 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
     <link href="./static/styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
       <b>
       <a href="/info"> Info // </a>
       <a href="/contact"> Contact //  </a>
       <a href="/sign-up"> Sign Up //</a> </br>
-      <div><h3> Welcome to my website!</h3></div>
+      <div><h1 class="welcome-title"> Welcome to my website!</h1></div>
       </b>
 
       <div>
         {% if local_instruction %}
-          </div>OpenAI instruction: {{local_instruction}}</div>
+          <div class="description">OpenAI instruction: {{local_instruction}}</div>
         {% endif %}
-      </div></br></br>
+      </div></br>
 
       <form action="#" method="POST">
       <input placeholder='Input here' name="input-string">  </input>

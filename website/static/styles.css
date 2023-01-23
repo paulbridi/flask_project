@@ -1,0 +1,14 @@
+a {
+  text-decoration: none;
+  color: #000000;
+  font-size: large;
+  margin: 0 1.875rem 0 0;
+}
+
+a:hover {
+  color: #247ba0; /* red color */
+}
+
+h3:hover{
+  color: #4E5340; /* red color */
+}

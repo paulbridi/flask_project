@@ -4,30 +4,46 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
+    <link href="./static/styles.css" rel="stylesheet">
   </head>
   <body>
-      <a href="/info"> Info / </a>
-      <a href="/contact"> Contact / </a>
-      <a href="/sign-up"> Sign Up </a> </br></br>
-      <div><b> Welcome to my website!</b><br></div>
+      <b>
+      <a href="/info"> Info // </a>
+      <a href="/contact"> Contact //  </a>
+      <a href="/sign-up"> Sign Up //</a> </br>
+      <div><h3> Welcome to my website!</h3></div>
+      </b>
 
-      <div> Enter text below: </div>
+      <div>
+        {% if local_instruction %}
+          </div>OpenAI instruction: {{local_instruction}}</div>
+        {% endif %}
+      </div></br></br>
 
       <form action="#" method="POST">
       <input placeholder='Input here' name="input-string">  </input>
       <input type="submit"></input>
-      </form>
+      </form></br>
 
       <!-- <div>
         {% for x in range(5)%}
           </div>{{x}}</div>
         {% endfor %}
       </div> -->
+
       <div>
         {% if i_string%}
-          </div>{{i_string}}</div>
+          </div><b>Input: </b><i> {{i_string}}</i></div>
         {% endif %}
-      </div>
+      </div></br>
+
+      <div>
+        {% if o_string%}
+          </div><b>Output: </b> {{o_string}}</div>
+        {% endif %}
+      </div></br>
+
+
 
 
   </body>

@@ -1,35 +1,21 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash, Response, jsonify
-
-import openai
-import sys
+from flask import Blueprint, render_template, request, Response, jsonify
+from website.python_scripts.text_io import text_io
 
 
+import os
 
 views = Blueprint('views', __name__)
 
 # Route to home page, including POST and GET methods
 @views.route('/', methods=["POST","GET"])
 def home():
-    print(request.method)
-    if request.method == "POST" and 'text-input-string' in request.form:
-
-        # return render_template("info.html")
-        print(request.form)
-
-        # Set form response to text_i_string for python usage
-        text_i_string = request.form["text-input-string"]
-
-        # Call openAI w paramters to create completion string
-        resp = openai.Completion.create(
-            model="text-davinci-003",
-            prompt=text_i_string,
-            max_tokens=100,
-            temperature=.9
-            # stream=True <-- creates generator object
-        )
-        return render_template("home.html", i_string=text_i_string,  resp=resp)
     return render_template("home.html")
 
+@views.route('/text_output/', methods=["POST"])
+def text_output():
+    text_i_string = request.form["input_text"]
+    output_text = text_io(text_i_string)
+    return output_text
 
 @views.route('/info/')
 def info():

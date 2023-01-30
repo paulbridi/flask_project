@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script type="module" src="./static/index.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="module" src="./static/text_output.js"></script>
   </head>
 
   <body>
@@ -19,10 +20,10 @@
       <div><h1 class="welcome-title"> Welcome to my website!</h1></div>
       </b>
 
-      <form method="POST">
+      <form id="text-form" method="POST">
         <label for="input-string"><b>Enter text</b></label></br>
-        <input placeholder='How can I help you?' name="text-input-string" size="48">  </input>
-        <input type="submit"></input>
+        <input placeholder='How can I help you?' id="text-input-string" size="48">  </input>
+        <button type="submit">Submit</button>
       </form></br>
 
       <div>
@@ -32,10 +33,10 @@
         {% endif %}
       </div>
 
-      <div>
-        <b>Output: </b>
-        {% if resp %}
-          {{resp["choices"][0]["text"]}}
+      <b>Output: </b>
+      <div id="text_output">
+        {% if output_text %}
+          {{ output_text }}
         {% endif %}
       </div></br></br></br>
 
@@ -48,6 +49,11 @@
 
       <div id="map">
       </div>
-      <script type="module" src="./static/map_refresh.js"></script>
+      <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmY-8fqn35ECejZjfDNWTTkVzUMo32xB0&callback=initMap"
+      defer
+      >
+      </script>
+
   </body>
 </html>

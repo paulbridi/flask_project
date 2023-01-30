@@ -4,7 +4,6 @@ import openai
 import sys
 
 
-openai.api_key = "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"
 
 views = Blueprint('views', __name__)
 

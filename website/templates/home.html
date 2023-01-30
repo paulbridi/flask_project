@@ -7,8 +7,10 @@
     <link href="./static/styles.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="./static/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
+
   <body>
       <b>
       <a href="/info"> Info // </a>
@@ -17,37 +19,40 @@
       <div><h1 class="welcome-title"> Welcome to my website!</h1></div>
       </b>
 
-      <div>
-        {% if local_instruction %}
-          <div class="description">OpenAI instruction: {{local_instruction}}</div>
-        {% endif %}
-      </div></br>
-
-      <form action="#" method="POST">
-      <input placeholder='Input here' name="input-string">  </input>
-      <input type="submit"></input>
+      <form method="POST">
+        <label for="input-string"><b>Enter text</b></label></br>
+        <input placeholder='How can I help you?' name="text-input-string" size="48">  </input>
+        <input type="submit"></input>
       </form></br>
 
-      <!-- <div>
-        {% for x in range(5)%}
-          </div>{{x}}</div>
-        {% endfor %}
-      </div> -->
-
       <div>
+        <b>Input: </b>
         {% if i_string%}
-          </div><b>Input: </b><i> {{i_string}}</i></div>
+          {{i_string}}
         {% endif %}
-      </div></br>
+      </div>
 
       <div>
-        {% if o_string%}
-          </div><b>Output: </b> {{o_string}}</div>
+        <b>Output: </b>
+        {% if resp %}
+          {{resp["choices"][0]["text"]}}
         {% endif %}
-      </div></br>
+      </div></br></br></br>
 
+        <form id="map_form" method="POST">
+            <label for="map-input"><b>Search the map</b></label></br>
+            <input type=text placeholder='What are you looking for?' id="map-input" size="48">
+            <input type="submit" name="map-input"></input>
+        </form>
+        </body></br>
 
-
-
+      <div id="map">
+      </div>
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmY-8fqn35ECejZjfDNWTTkVzUMo32xB0&callback=initMap"
+        defer
+        >
+      </script>
+      <script type="module" src="./static/map_refresh.js"></script>
   </body>
 </html>

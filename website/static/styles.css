@@ -7,8 +7,6 @@ html *
   font-size: 36px;
 }
 
-
-
 h1 { font-family: "Helvetica Neue"; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; }
 h2 { font-family: "Helvetica Neue"; font-size: 19px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 20.9px; }
 h3 { font-family: "Helvetica Neue"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; }
@@ -38,4 +36,10 @@ h2:hover{
 
 .description {
   font-size: 14px;
+}
+
+#map {
+  height: 400px; /* The height is 400 pixels */
+  width: 80%; /* The width is the width of the web page */
+  margin: auto;
 }
